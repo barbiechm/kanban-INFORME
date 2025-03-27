@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Deudas con Tasas de Cambio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Gestión de Deudas</h1>
+        <p>Proyecto de desarrollo - Backend: ASP.NET Core | Frontend: React | BD: PostgreSQL</p>
+    </header>
+
+    <main>
+        <section class="kanban-section">
+            <h2>Fases del Proyecto</h2>
+            <div class="kanban-board" id="kanban-board">
+                <!-- PLANIFICACIÓN -->
+                <div class="kanban-column">
+                    <h3><i class="material-icons">assignment</i> Planificación</h3>
+                    <div class="kanban-items" id="planning">
+                        <div class="kanban-item" draggable="true">
+                            <h4>Definir alcance del sistema</h4>
+                            <p>Establecer funcionalidades clave: clientes, deudas, tasas e informes</p>
+                            <span class="task-label planning">Planificación</span>
+                        </div>
+                        <div class="kanban-item" draggable="true">
+                            <h4>Selección de tecnologías</h4>
+                            <p>ASP.NET Core,React, PostgreSQL</p>
+                            <span class="task-label planning">Planificación</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ANÁLISIS -->
+                <div class="kanban-column">
+                    <h3><i class="material-icons">search</i> Análisis</h3>
+                    <div class="kanban-items" id="analysis">
+                        <div class="kanban-item" draggable="true">
+                            <h4>Requisitos de clientes</h4>
+                            <p>CRUD para gestión de clientes</p>
+                            <span class="task-label backend">Backend</span>
+                        </div>
+                        <div class="kanban-item" draggable="true">
+                            <h4>Requisitos de deudas</h4>
+                            <p>Registro con monto, fecha y tasa del día</p>
+                            <span class="task-label backend">Backend</span>
+                        </div>
+                        <div class="kanban-item" draggable="true">
+                            <h4>API de tasas de cambio</h4>
+                            <p>Integración con fuente externa</p>
+                            <span class="task-label backend">Backend</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DISEÑO -->
+                <div class="kanban-column">
+                    <h3><i class="material-icons">design_services</i> Diseño</h3>
+                    <div class="kanban-items" id="design">
+                        <div class="kanban-item" draggable="true">
+                            <h4>Modelo de base de datos</h4>
+                            <p>Diseñar tablas: Clientes, Deudas, Tasas</p>
+                            <span class="task-label database">BD</span>
+                        </div>
+                        <div class="kanban-item" draggable="true">
+                            <h4>Diseño de API REST</h4>
+                            <p>Endpoints para cada entidad</p>
+                            <span class="task-label backend">Backend</span>
+                        </div>
+                        <div class="kanban-item" draggable="true">
+                            <h4>Interfaz de usuario</h4>
+                            <p>Wireframes para pantallas principales</p>
+                            <span class="task-label frontend">Frontend</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMPLEMENTACIÓN -->
+                <div class="kanban-column">
+                    <h3><i class="material-icons">code</i> Implementación</h3>
+                    <div class="kanban-items" id="implementation">
+                        <div class="kanban-item" draggable="true">
+                            <h4>Backend API</h4>
+                            <p>Desarrollar controladores en ASP.NET Core</p>
+                            <span class="task-label backend">Backend</span>
+                        </div>
+                        <div class="task-label backend">Backend</span>
+                        </div>
+                        <div class="kanban-item" draggable="true">
+                            <h4>Frontend Angular/React</h4>
+                            <p>Componentes para clientes y deudas</p>
+                            <span class="task-label frontend">Frontend</span>
+                        </div>
+                        <div class="kanban-item" draggable="true">
+                            <h4>Consumo API tasas</h4>
+                            <p>Implementar HttpClient para obtener tasas</p>
+                            <span class="task-label backend">Backend</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRUEBAS -->
+                <div class="kanban-column">
+                    <h3><i class="material-icons">bug_report</i> Pruebas</h3>
+                    <div class="kanban-items" id="testing">
+                        <div class="kanban-item" draggable="true">
+                            <h4>Pruebas unitarias API</h4>
+                            <p>Validar endpoints con Postman</p>
+                            <span class="task-label testing">Pruebas</span>
+                        </div>
+                        <div class="kanban-item" draggable="true">
+                            <h4>Pruebas de interfaz</h4>
+                            <p>Validar flujos de usuario</p>
+                            <span class="task-label testing">Pruebas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DESPLIEGUE -->
+                <div class="kanban-column">
+                    <h3><i class="material-icons">cloud_upload</i> Despliegue</h3>
+                    <div class="kanban-items" id="deployment">
+                        <div class="kanban-item" draggable="true">
+                            <h4>Configurar producción</h4>
+                            <p>Preparar entorno en Azure/AWS</p>
+                            <span class="task-label deployment">Despliegue</span>
+                        </div>
+                        <div class="kanban-item" draggable="true">
+                            <h4>Migración de datos</h4>
+                            <p>Transferir datos iniciales</p>
+                            <span class="task-label deployment">Despliegue</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MANTENIMIENTO -->
+                <div class="kanban-column">
+                    <h3><i class="material-icons">engineering</i> Mantenimiento</h3>
+                    <div class="kanban-items" id="maintenance">
+                        <div class="kanban-item" draggable="true">
+                            <h4>Soporte a usuarios</h4>
+                            <p>Atender consultas y problemas</p>
+                            <span class="task-label maintenance">Mantenimiento</span>
+                        </div>
+                        <div class="kanban-item" draggable="true">
+                            <h4>Actualizaciones</h4>
+                            <p>Implementar mejoras solicitadas</p>
+                            <span class="task-label maintenance">Mantenimiento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resto de tus secciones informativas se mantienen igual -->
+        <section class="info-section">
+            <h2>Arquitectura del Sistema</h2>
+            <div class="concept-card">
+                <h3>Frontend</h3>
+                <p>Aplicación web para registrar clientes, ver deudas y generar informes. Tecnologías recomendadas:</p>
+                <ul>
+                    <li><strong>Framework:</strong> React</li>
+                    <li><strong>Manejo de estado:</strong> Context API/Redux (React)</li>
+                    <li><strong>UI:</strong>Tailwind CSS</li>
+                </ul>
+            </div>
+            
+            <div class="concept-card">
+                <h3>Backend</h3>
+                <p>API para manejar los datos de clientes, deudas y tasas de cambio:</p>
+                <ul>
+                    <li><strong>Framework:</strong> ASP.NET Core Web API</li>
+                    <li><strong>ORM:</strong> Entity Framework Core</li>
+                    <li><strong>Autenticación:</strong> JWT (si es necesaria)</li>
+                    <li><strong>Consumo API tasas:</strong> HttpClient para obtener tasas del dólar</li>
+                </ul>
+            </div>
+            
+            <div class="concept-card">
+                <h3>Base de Datos</h3>
+                <p>Almacenamiento de clientes, deudas y tasas del dólar:</p>
+                <ul>
+                    <li><strong>Recomendada:</strong> SQL Server o PostgreSQL</li>
+                    <li><strong>Alternativa:</strong> SQLite para entornos ligeros</li>
+                    <li><strong>Modelo:</strong> Tablas relacionadas (Clientes → Deudas)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>Funcionalidades Clave</h2>
+            <div class="db-types">
+                <div class="db-card">
+                    <h3>Gestión de Clientes</h3>
+                    <ul>
+                        <li>Crear, editar y eliminar clientes</li>
+                        <li>Búsqueda y filtrado de clientes</li>
+                        <li>Visualización de historial</li>
+                    </ul>
+                </div>
+                
+                <div class="db-card">
+                    <h3>Gestión de Deudas</h3>
+                    <ul>
+                        <li>Registrar deudas con monto y fecha</li>
+                        <li>Asociar tasa de cambio del día</li>
+                        <li>Marcar deudas como pagadas</li>
+                        <li>Visualizar deudas por cliente</li>
+                    </ul>
+                </div>
+                
+                <div class="db-card">
+                    <h3>Informes</h3>
+                    <ul>
+                        <li>Reporte semanal de deudas</li>
+                        <li>Histórico de tasas de cambio</li>
+                        <li>Exportar a PDF/enviar por email</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="info-section">
+            <h2>Conceptos Básicos de Implementación de Sistemas</h2>
+            <div class="concept-card">
+                <h3><i class="material-icons">flag</i> 1. Planificación</h3>
+                <p>Definición clara de objetivos, alcance, recursos necesarios y cronograma. Incluye identificación de stakeholders y análisis de viabilidad.</p>
+                <ul>
+                    <li>Establecer metas medibles</li>
+                    <li>Identificar riesgos potenciales</li>
+                    <li>Definir métricas de éxito</li>
+                </ul>
+            </div>
+            <div class="concept-card">
+                <h3><i class="material-icons">search</i> 2. Análisis de Requisitos</h3>
+                <p>Recopilación detallada de las necesidades del sistema mediante entrevistas, cuestionarios y observación de procesos existentes.</p>
+                <ul>
+                    <li>Documentar casos de uso</li>
+                    <li>Priorizar funcionalidades</li>
+                    <li>Validar con usuarios finales</li>
+                </ul>
+            </div>
+            <div class="concept-card">
+                <h3><i class="material-icons">design_services</i> 3. Diseño del Sistema</h3>
+                <p>Creación de la arquitectura técnica, diseño de componentes, interfaces de usuario y estructura de base de datos.</p>
+                <ul>
+                    <li>Diagramas UML</li>
+                    <li>Prototipos de interfaz</li>
+                    <li>Modelo relacional</li>
+                </ul>
+            </div>
+            <div class="concept-card">
+                <h3><i class="material-icons">code</i> 4. Desarrollo</h3>
+                <p>Implementación del código según especificaciones, siguiendo estándares de calidad y buenas prácticas de programación.</p>
+                <ul>
+                    <li>Versionado con Git</li>
+                    <li>Revisiones de código</li>
+                    <li>Documentación técnica</li>
+                </ul>
+            </div>
+            <div class="concept-card">
+                <h3><i class="material-icons">bug_report</i> 5. Pruebas</h3>
+                <p>Verificación de que el sistema cumple con los requisitos y funciona correctamente en diferentes escenarios.</p>
+                <ul>
+                    <li>Pruebas unitarias</li>
+                    <li>Pruebas de integración</li>
+                    <li>Pruebas de carga</li>
+                </ul>
+            </div>
+            <div class="concept-card">
+                <h3><i class="material-icons">cloud_upload</i> 6. Despliegue</h3>
+                <p>Instalación en el entorno productivo, migración de datos y capacitación a usuarios finales.</p>
+                <ul>
+                    <li>Planes de rollback</li>
+                    <li>Documentación para usuarios</li>
+                    <li>Soporte inicial</li>
+                </ul>
+            </div>
+            <div class="concept-card">
+                <h3><i class="material-icons">engineering</i> 7. Mantenimiento</h3>
+                <p>Soporte post-implementación, corrección de errores y actualizaciones para adaptarse a nuevas necesidades.</p>
+                <ul>
+                    <li>Monitoreo continuo</li>
+                    <li>Actualizaciones de seguridad</li>
+                    <li>Mejoras iterativas</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section class="info-section">
+            <h2>Conceptos Básicos de Bases de Datos</h2>
+            
+            <div class="db-types">
+                <div class="db-card">
+                    <h3><i class="material-icons">storage</i> Bases de Datos SQL (Relacionales)</h3>
+                    <ul>
+                        <li><strong>Estructura:</strong> Datos organizados en tablas con filas y columnas</li>
+                        <li><strong>Ventajas:</strong> Integridad de datos, ACID, relaciones complejas</li>
+                        <li><strong>Ejemplos:</strong> PostgreSQL, SQL Server, MySQL</li>
+                        <li><strong>Uso ideal:</strong> Aplicaciones transaccionales, datos estructurados</li>
+                    </ul>
+                    <div class="code-example">
+                        <h4>Ejemplo SQL:</h4>
+                        <pre>
+CREATE TABLE deudas (
+    id SERIAL PRIMARY KEY,
+    cliente_id INT REFERENCES clientes(id),
+    monto DECIMAL(10,2),
+    fecha DATE,
+    tasa DECIMAL(10,2),
+    pagada BOOLEAN DEFAULT false
+);</pre>
+                    </div>
+                </div>
+                
+                <div class="db-card">
+                    <h3><i class="material-icons">data_object</i> Bases de Datos NoSQL</h3>
+                    <ul>
+                        <li><strong>Estructura:</strong> Documentos, clave-valor, grafos o columnas</li>
+                        <li><strong>Ventajas:</strong> Escalabilidad horizontal, flexibilidad</li>
+                        <li><strong>Ejemplos:</strong> MongoDB, Cassandra, Redis</li>
+                        <li><strong>Uso ideal:</strong> Big Data, datos no estructurados</li>
+                    </ul>
+                    <div class="code-example">
+                        <h4>Ejemplo NoSQL (MongoDB):</h4>
+                        <pre>
+{
+  "cliente": "Juan Pérez",
+  "deudas": [
+    {
+      "monto": 150.50,
+      "fecha": "2023-10-15",
+      "tasa": 35.20
+    }
+  ]
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3><i class="material-icons">schema</i> Modelado de Datos para este Proyecto</h3>
+                <p>Estructura recomendada para el sistema de gestión de deudas:</p>
+                <ul>
+                    <li><strong>Clientes:</strong> id, nombre, contacto, dirección</li>
+                    <li><strong>Deudas:</strong> id, cliente_id, monto, fecha, tasa, estado</li>
+                    <li><strong>Tasas:</strong> id, fecha, valor, fuente</li>
+                    <li><strong>Relaciones:</strong> Un cliente tiene muchas deudas</li>
+                </ul>
+                <div class="code-example">
+                    <h4>Consulta JOIN típica:</h4>
+                    <pre>
+SELECT c.nombre, d.monto, d.fecha, d.tasa
+FROM clientes c
+JOIN deudas d ON c.id = d.cliente_id
+WHERE d.pagada = false;</pre>
+                </div>
+            </div>
+        </section>
+    </main>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
